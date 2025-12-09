@@ -8,12 +8,57 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <style>
             *{
                 font-family:"Noto Sans JP",sans-serif;
                 font-optical-sizing: auto;
                 font-weight: 400;
                 font-style: normal;
+            }
+            header{
+                width: 100vw;
+            }
+            div{
+                width:100%;
+            }
+            float-left{
+                float: left;
+            }
+            float-right{
+                float: right;
+            }
+            float-clear{
+                clear: both;
+            }
+            .menu-wrapper{
+                position: relative;
+            }
+            .menu-icon{
+                width: 40px;
+                height: 30px;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+                z-index: 3;
+                display: inline-block;
+            }
+            .menu-icon span {
+                display: block;
+                height: 4px;
+                margin: 6px 0;
+                background: #333;
+                border-radius: 2px;
+                transition: 0.4s;
+            }
+            #menu-toggle:checked + .menu-icon span:nth-child(1) {
+                transform: translateY(10px) rotate(45deg);
+            }
+            #menu-toggle:checked + .menu-icon span:nth-child(2) {
+                opacity: 0;
+            }
+            #menu-toggle:checked + .menu-icon span:nth-child(3) {
+                transform: translateY(-10px) rotate(-45deg);
             }
         </style>
         <!-- Google Tag Manager -->
@@ -29,7 +74,21 @@
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQZ8326X"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        <h1>あおく</h1>
+        <header>
+            <div id="header">
+                <h1 class="float-left">あおく</h1>
+                <div class="menu-wraper">
+                    <input type="checkbox" id="menu-toggle" hidden>
+                    <label class="menu-icon" for="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <span class="float-clear"></span>
+            </div>
+        </header>
+        
         <p>制作中...</p>
         <h3>Links</h3>
         <a href="https://amoch.aoku.f5.si">あもちゃ</a>
